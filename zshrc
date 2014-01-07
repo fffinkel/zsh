@@ -1,4 +1,4 @@
-#source ~/.zsh/prompt.zsh
+source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/styles.zsh
 source ~/.zsh/exports.zsh
