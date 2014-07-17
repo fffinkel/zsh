@@ -27,7 +27,7 @@ alias s='screen -dRR'
 alias sls='screen -ls'
 
 alias ack='ack-grep'
-alias vi='vim'
+alias vi='vim -p'
 
 alias pbr='source ~/src/tools/pbr.sh'
 alias pbl='perlbrew list'
