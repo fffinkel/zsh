@@ -36,3 +36,5 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias ls='ls --color=auto'
+
+alias cir='cd /home/mfinkel/src/cirrus/'
