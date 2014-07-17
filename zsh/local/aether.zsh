@@ -1,5 +1,5 @@
 source /opt/perlbrew/etc/bashrc
-perlbrew use perl-5.12.4@blackjack
+perlbrew use perl-5.18.2@cirrus
 
 autoload bashcompinit
 bashcompinit
@@ -10,6 +10,7 @@ export PERL5LIB="/home/mfinkel/src/blackjack/lib:$PERL5LIB"
 
 export PATH="$PATH:/home/mfinkel/src/cadillac/bin"
 export PERL5LIB="/home/mfinkel/src/cadillac/lib:$PERL5LIB"
+export PERL5LIB="/home/mfinkel/src/rest-api-client/lib:$PERL5LIB"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 source /opt/aether_python/bin/activate
