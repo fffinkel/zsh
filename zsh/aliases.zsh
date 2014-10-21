@@ -52,8 +52,29 @@ alias sls='screen -ls'
 alias ack='ack-grep'
 alias vi='vim -p'
 
-alias pbr='source ~/src/tools/pbr.sh'
 alias pbl='perlbrew list'
+
+alias pbr=perlbrew_regex
+function perlbrew_regex() {
+	IFS=$'\n'
+	regex=$1
+	count=0
+
+	for i in $(perlbrew list)
+		do
+			if [[ $i =~ $regex ]]; then
+				perlbrew=$(sed -e's/\s*\**\s*//' <<< $i)
+				count=$((count + 1))
+			fi
+	done
+
+	if [[ $count -ne 1 ]]; then
+		echo "Regex '$regex' matches $count perlbrews, exiting"
+	else
+		echo "Using perlbrew '$perlbrew'"
+		perlbrew use $perlbrew
+	fi
+}
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
