@@ -50,4 +50,4 @@ alias s='screen -dRR'
 alias sls='screen -ls'
 
 alias vi='vim -p'
-alias ls='ls --color=auto'
+alias ls='ls -G'
