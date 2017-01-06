@@ -8,3 +8,4 @@ source /home/mfinkel/python26/bin/activate
 #export PERL5LIB="$PERL5LIB:/home/mfinkel/src/dist_zilla_pluginbundle_fffinkel/lib"
 
 alias irssi='irssi --config=~/.irssi/config_boxthebestbox'
+alias ack='ack-grep'

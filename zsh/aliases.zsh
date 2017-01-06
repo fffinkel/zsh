@@ -49,7 +49,6 @@ alias grh='git reset HEAD'
 alias s='screen -dRR'
 alias sls='screen -ls'
 
-alias ack='ack-grep'
 alias vi='vim -p'
 
 alias pbl='perlbrew list'
