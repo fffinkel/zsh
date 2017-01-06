@@ -12,8 +12,8 @@ bindkey '^F' history-incremental-search-forward
 
 setopt histignorealldups sharehistory
 
-if [[ `hostname` == 'aether' ]]; then
-	source ~/.zsh/local/aether.zsh
+if [[ `hostname` == 'Matts-MacBook-Pro.local' ]]; then
+	source ~/.zsh/local/zr.zsh
 elif [[ `hostname` == 'boxthebestbox' ]]; then
 	source ~/.zsh/local/boxthebestbox.zsh
 elif [[ `hostname` == 'boxtheworstbox' ]]; then
