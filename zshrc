@@ -11,9 +11,6 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
 
 setopt histignorealldups sharehistory
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
 if [[ `hostname` == 'aether' ]]; then
 	source ~/.zsh/local/aether.zsh
