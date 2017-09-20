@@ -15,3 +15,5 @@ alias perlbs='/usr/bin/zrperl -MStarterView::Bootstrap'
 
 alias zrtcm="prove -vr -Iapp/lib app/t/tcm.t :: "
 alias zrt="prove -vr "
+
+source /etc/profile.d/ziprecruiter_environment.zsh
