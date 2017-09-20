@@ -27,4 +27,5 @@ alias ls='ls -G'
 function logsubsearch() { git log -L '/sub '"$1"' {/',/^}/:$2 }
 alias gls=logsubsearch
 
-alias screen="/usr/local/bin/screen"
+function edit_conflicts() { vim -p $(git status | grep "both modified:" | perl -pe 's/both modified:\s*(.*)$/$1/') }
+alias ugh=edit_conflicts
