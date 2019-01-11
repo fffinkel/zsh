@@ -1,4 +1,5 @@
 alias gst='git status'
+alias gb='git branch'
 
 alias gl='git log --graph --pretty=oneline'
 alias glo='git log --graph'
@@ -15,17 +16,22 @@ alias grh='git reset HEAD'
 alias gri='git rebase -i'
 
 alias gs='git add . && git stash'
+alias gm='git merge --ff-only'
+
 alias gsl='git stash list'
 alias gsp='git stash pop'
-
-alias s='screen -dRR'
-alias sls='screen -ls'
-
-alias vi='vim -p'
-alias ls='ls -G'
 
 function logsubsearch() { git log -L '/sub '"$1"' {/',/^}/:$2 }
 alias gls=logsubsearch
 
 function edit_conflicts() { vim -p $(git status | grep "both modified:" | perl -pe 's/both modified:\s*(.*)$/$1/') }
 alias ugh=edit_conflicts
+
+alias derp='git commit --amend --no-edit && git push --force-with-lease'
+alias gtfo='git pull --rebase && git push'
+
+alias s='screen -dRR'
+alias sls='screen -ls'
+
+alias vi='vim -p'
+alias ls='ls -G'

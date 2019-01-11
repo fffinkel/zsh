@@ -1,18 +1,23 @@
-source ~/.zsh/prompt.zsh
-source ~/.zsh/aliases.zsh
-source ~/.zsh/styles.zsh
-source ~/.zsh/exports.zsh
-
 autoload -Uz compinit
 compinit
 
-set -o vi
+autoload -U edit-command-line
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
 
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 setopt histignorealldups sharehistory
 
-source ~/.zsh/local/zr.zsh
-cd ~/ziprecruiter
+source ~/.zsh/prompt.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/styles.zsh
+source ~/.zsh/exports.zsh
+
+ZIPRC=/home/mattf/.ziprc
+if [ -f $ZIPRC ]; then
+ source $ZIPRC
+fi
