@@ -27,6 +27,9 @@ alias gls=logsubsearch
 function edit_conflicts() { vim -p $(git status | grep "both modified:" | perl -pe 's/both modified:\s*(.*)$/$1/') }
 alias ugh=edit_conflicts
 
+function edit_modified() { vim -p $(git status | grep "^\s*modified:" | perl -pe 's/modified:\s*(.*)$/$1/') }
+alias work=edit_modified
+
 alias derp='git commit --amend --no-edit && git push --force-with-lease'
 alias gtfo='git pull --rebase && git push'
 
