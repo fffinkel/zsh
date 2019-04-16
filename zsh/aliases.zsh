@@ -31,10 +31,21 @@ function edit_modified() { vim -p $(git status | grep "^\s*modified:" | perl -pe
 alias work=edit_modified
 
 alias derp='git commit --amend --no-edit && git push --force-with-lease'
-alias gtfo='git pull --rebase && git push'
 
 alias s='screen -dRR'
 alias sls='screen -ls'
 
 alias vi='vim -p'
 alias ls='ls -G'
+
+function find_and_open() { vim -p +/$1 -c ":tabdo normal gg" -c ":tabdo normal n" $(ack -l $1 $2) }
+alias fo=find_and_open
+
+function greenlight_submit() {
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  git checkout master
+  greenlight submit $branch
+}
+alias gtfo=greenlight_submit
+
+alias colr='git checkout $(git tag | grep prod_www | sort -r | head -n 1)'
