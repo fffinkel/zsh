@@ -49,3 +49,13 @@ function greenlight_submit() {
 alias gtfo=greenlight_submit
 
 alias colr='git checkout $(git tag | grep prod_www | sort -r | head -n 1)'
+
+function regex_checkout() {
+  result=$(git branch | grep $1)
+  if [[ $result = *$'\n'* ]]; then
+    echo "error, found multiple branches matching \"$1\""
+    return 1
+  fi
+  git checkout $(echo ${result/\*/} | xargs)
+}
+alias gco=regex_checkout
