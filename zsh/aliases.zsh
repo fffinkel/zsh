@@ -30,7 +30,7 @@ alias ugh=edit_conflicts
 function edit_modified() { vim -p $(git status | grep "^\s*modified:" | perl -pe 's/modified:\s*(.*)$/$1/') }
 alias work=edit_modified
 
-alias derp='git commit --amend --no-edit && git push --force-with-lease'
+alias derp='git add . && git commit --amend --no-edit && git push --force-with-lease'
 
 alias s='screen -dRR'
 alias sls='screen -ls'
@@ -44,14 +44,16 @@ alias fo=find_and_open
 function greenlight_submit() {
   branch=$(git rev-parse --abbrev-ref HEAD)
   git checkout master
-  greenlight submit $branch
+  bin/greenlight submit $branch
+  git pull
+  git status
 }
 alias gtfo=greenlight_submit
 
 alias colr='git checkout $(git tag | grep prod_www | sort -r | head -n 1)'
 
 function regex_checkout() {
-  result=$(git branch | grep $1)
+  result=$(git branch | grep "$1")
   if [[ $result = *$'\n'* ]]; then
     echo "error, found multiple branches matching \"$1\""
     return 1
