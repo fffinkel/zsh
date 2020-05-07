@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 PREFIX_FILE="/tmp/.prompt_prefix"
-WARNING="WARNING: %s dir is out of date"
+OOD_WARNING="WARNING: %s dir is out of date"
+WTU_WARNING="WARNING: %s dir has uncommitted changes"
 REPOS=(
   "cnf/zsh"
   "cnf/vim"
@@ -19,7 +20,11 @@ for REPO in $REPOS; do
   REPO_STATUS=$(git --git-dir=$REPO_DIR/.git status)
 
   if [[ "$REPO_STATUS" == *"Your branch is behind 'origin/master'"* ]]; then
-    printf "$WARNING\n" $REPO >> $PREFIX_FILE
+    printf "$OOD_WARNING\n" $REPO >> $PREFIX_FILE
+  fi
+
+  if [[ "$REPO_STATUS" != *"working tree clean"* ]]; then
+    printf "$WTU_WARNING\n" $REPO >> $PREFIX_FILE
   fi
 
 done
