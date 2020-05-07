@@ -22,7 +22,6 @@ ZIPRC=/home/mattf/.ziprc
 if [ -f $ZIPRC ]; then
  source $ZIPRC
 fi
-export GOPATH=$HOME/go
-export STARTERVIEW=$HOME/ziprecruiter
+
 
 (~/.zsh/repocheck.zsh &)
