@@ -22,7 +22,9 @@ for REPO in $(ls $CONFIGS_DIR); do
 done
 
 if [[ $PREFIX_STRING == "" ]]; then
-  rm $PREFIX_FILE
+  if [[ -a $PREFIX_FILE ]]; then
+    rm $PREFIX_FILE
+  fi
 else
   echo $PREFIX_STRING > $PREFIX_FILE
 fi
