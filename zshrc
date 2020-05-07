@@ -24,3 +24,5 @@ if [ -f $ZIPRC ]; then
 fi
 export GOPATH=$HOME/go
 export STARTERVIEW=$HOME/ziprecruiter
+
+(~/.zsh/repocheck.zsh &)
