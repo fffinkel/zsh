@@ -61,3 +61,5 @@ function regex_checkout() {
   git checkout $(echo ${result/\*/} | xargs)
 }
 alias gco=regex_checkout
+
+alias s='screen -dRR'
