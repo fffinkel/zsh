@@ -18,10 +18,9 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/styles.zsh
 source ~/.zsh/exports.zsh
 
-ZIPRC=/home/mattf/.ziprc
+ZIPRC=$HOME/.ziprc
 if [ -f $ZIPRC ]; then
  source $ZIPRC
 fi
-
 
 (~/.zsh/repocheck.zsh &)
