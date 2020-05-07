@@ -1,21 +1,17 @@
 #!/bin/zsh
 
 PREFIX_FILE="/tmp/.prompt_prefix"
+CONFIGS_DIR="$HOME/cnf"
 OOD_WARNING="WARNING: %s dir is out of date"
 WTU_WARNING="WARNING: %s dir has uncommitted changes"
-REPOS=(
-  "cnf/zsh"
-  "cnf/vim"
-  "cnf/dotfiles"
-)
 
 if [[ -a $PREFIX_FILE ]] then
   rm $PREFIX_FILE
 fi
 
-for REPO in $REPOS; do
+for REPO in $(ls $CONFIGS_DIR); do
 
-  REPO_DIR=$HOME/$REPO
+  REPO_DIR=$CONFIGS_DIR/$REPO
   git --git-dir=$REPO_DIR/.git fetch > /dev/null
   REPO_STATUS=$(git --git-dir=$REPO_DIR/.git status)
 
