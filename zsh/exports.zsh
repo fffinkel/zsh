@@ -10,3 +10,9 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
 export GOPATH=$HOME/go
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/go/bin"
+export ZR_LOG_FORMAT=plain
+export GO111MODULE=on
+
+export KEYTIMEOUT=1
