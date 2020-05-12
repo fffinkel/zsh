@@ -5,5 +5,5 @@ clean:
 install: clean
 	git submodule init
 	git submodule update
-	ln -s $$(pwd)/zsh/ ~/.zsh
-	ln -s $$(pwd)/zshrc ~/.zshrc
+	ln -s ~/cnf/dotfiles/zsh/ ~/.zsh
+	ln -s ~/cnf/dotfiles/zshrc ~/.zshrc
