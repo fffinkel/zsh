@@ -63,3 +63,11 @@ function regex_checkout() {
 alias gco=regex_checkout
 
 alias s='screen -dRR'
+
+function exec_container() {
+  app=${1:-starterview}
+  container_id=$(docker ps | grep "$app" | awk '{print $1}')
+  entrypoint=${2:-bash}
+  docker exec -it $container_id $entrypoint
+}
+alias hrm=exec_container
