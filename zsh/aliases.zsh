@@ -43,7 +43,6 @@ alias fo=find_and_open
 
 function greenlight_submit() {
   branch=$(git rev-parse --abbrev-ref HEAD)
-  git checkout master
   bin/greenlight submit $branch
   git pull
   git status
