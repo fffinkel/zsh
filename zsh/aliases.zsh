@@ -48,6 +48,9 @@ function greenlight_submit() {
 }
 alias gtfo=greenlight_submit
 
+alias newnew='git fetch && git rebase origin/master'
+alias newnewpush='git fetch && git rebase origin/master && git push'
+
 alias colr='git checkout $(git tag | grep prod_www | sort -r | head -n 1)'
 
 function regex_checkout() {
