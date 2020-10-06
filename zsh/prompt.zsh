@@ -24,10 +24,16 @@ __prompt () {
 %{$fg[red]%}$(cat $PREFIX_FILE)%{$reset_color%}"
     fi
 
+    if [[ -n $KUBECONFIG ]] then
+      PROMPT+="
+%{$fg[green]%}KUBECONFIG=$(echo $KUBECONFIG)%{$reset_color%}"
+    fi
+
     PROMPT+="
 [%w %t] %% "
 
   fi
+
 }
 
 precmd() { __prompt; }
