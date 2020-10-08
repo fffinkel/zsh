@@ -16,7 +16,7 @@ alias grh='git reset HEAD'
 alias gri='git rebase -i'
 
 alias gs='git add . && git stash'
-alias gm='git merge --ff-only'
+alias gp='git pull --rebase'
 
 alias gsl='git stash list'
 alias gsp='git stash pop'
