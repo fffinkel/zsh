@@ -37,6 +37,7 @@ alias sls='screen -ls'
 
 alias vi='vim -p'
 alias ls='ls -G'
+alias ack='ag'
 
 function find_and_open() { vim -p +/$1 -c ":tabdo normal gg" -c ":tabdo normal n" $(ack -l $1 $2) }
 alias fo=find_and_open
