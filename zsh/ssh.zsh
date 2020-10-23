@@ -1,8 +1,15 @@
-runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
-if [ $runcount -eq 0 ]; then
+
+RUNCOUNT=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
+if [ $RUNCOUNT -eq 0 ]; then
   echo Starting SSH Agent
   eval $(ssh-agent -s)
-  ssh-add -K ~/.ssh/id_rsa
 else
   echo Found SSH Agent
 fi
+
+ssh-add -K ~/.ssh/id_rsa
+
+if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/auth.sock;
+fi
+export SSH_AUTH_SOCK=~/.ssh/auth.sock
