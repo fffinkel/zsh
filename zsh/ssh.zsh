@@ -7,13 +7,6 @@ else
   echo Found SSH Agent;
 fi
 
-OS=$(uname)
-if [ $OS = Darwin ]; then
-  ssh-add -K;
-else
-  ssh-add;
-fi
-
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/auth.sock;
 fi
