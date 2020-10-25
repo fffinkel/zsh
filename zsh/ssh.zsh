@@ -7,7 +7,8 @@ else
   echo Found SSH Agent;
 fi
 
-if [ $OSTYPE = darwin ]; then
+OS=$(uname)
+if [ $OS = Darwin ]; then
   ssh-add -K;
 else
   ssh-add;
