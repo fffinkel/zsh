@@ -4,7 +4,8 @@ if [ $RUNCOUNT -eq 0 ]; then
   echo Starting SSH Agent;
   eval $(ssh-agent -s);
 else
-  echo Found SSH Agent;
+  echo "Found ssh-agent with these identities:";
+  echo "$(ssh-add -l)";
 fi
 
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
