@@ -17,6 +17,7 @@ alias gri='git rebase -i'
 
 alias gs='git add . && git stash'
 alias gp='git pull --rebase'
+alias gf='git fetch'
 
 alias gsl='git stash list'
 alias gsp='git stash pop'
