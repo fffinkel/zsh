@@ -18,6 +18,12 @@ alias gri='git rebase -i'
 alias gs='git add . && git stash'
 alias gp='git pull --rebase'
 alias gf='git fetch'
+alias gfr='git fetch && git rebase origin/master'
+function git_new_branch() {
+  git fetch
+  git checkout -b $1 --no-track origin/master
+}
+alias gnb=git_new_branch
 
 alias gsl='git stash list'
 alias gsp='git stash pop'
@@ -64,8 +70,6 @@ function regex_checkout() {
   git checkout $(echo ${result/\*/} | xargs)
 }
 alias gco=regex_checkout
-
-alias s='screen -dRR'
 
 function exec_container() {
   app=${1:-starterview}
