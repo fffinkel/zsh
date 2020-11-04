@@ -14,6 +14,7 @@ bindkey -M vicmd v edit-command-line
 
 setopt histignorealldups sharehistory
 
+source ~/.zsh/greeting.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/styles.zsh
@@ -23,6 +24,11 @@ source ~/.zsh/ssh.zsh
 ZIPRC=$HOME/.ziprc
 if [ -f $ZIPRC ]; then
  source $ZIPRC
+fi
+
+if [ -z $STY ]; then
+  echo
+  screen -ls
 fi
 
 (~/.zsh/repocheck.zsh &)

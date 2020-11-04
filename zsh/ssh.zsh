@@ -1,4 +1,5 @@
 
+echo
 RUNCOUNT=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
 if [ $RUNCOUNT -eq 0 ]; then
   echo Starting SSH Agent;
