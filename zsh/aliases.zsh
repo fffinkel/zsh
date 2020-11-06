@@ -39,6 +39,7 @@ function git_regex_checkout() {
   git checkout $(echo ${result/\*/} | xargs)
 }
 alias gco=git_regex_checkout
+alias gcom='git checkout origin/master'
 
 function edit_conflicts() {
   vim -p $(git status | grep "both modified:" | perl -pe 's/both modified:\s*(.*)$/$1/')
