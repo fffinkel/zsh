@@ -29,6 +29,11 @@ __prompt () {
 %{$fg[green]%}KUBECONFIG=$(echo $KUBECONFIG)%{$reset_color%}"
     fi
 
+    if [[ -n $KNAMESPACE ]] then
+      PROMPT+="
+%{$fg[green]%}KNAMESPACE=$(echo $KNAMESPACE)%{$reset_color%}"
+    fi
+
     PROMPT+="
 [%w %t] %% "
 

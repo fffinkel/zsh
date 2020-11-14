@@ -1,6 +1,5 @@
 
 alias ack='ag'
-alias k='kubectl'
 alias ls='ls -G'
 alias s='screen -dRR'
 alias sls='screen -ls'
@@ -57,3 +56,14 @@ open_go_coverage () {
   open /tmp/go-cover.html
 }
 alias cvr=open_go_coverage
+
+k_namespace () {
+  kubectl -n $KNAMESPACE $@
+}
+alias k=k_namespace
+
+k_set_namespace () {
+  export KNAMESPACE=$1
+}
+alias kn=k_set_namespace
+
