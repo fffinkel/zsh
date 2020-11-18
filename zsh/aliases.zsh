@@ -11,8 +11,8 @@ alias gb='git branch'
 alias gci='git commit --verbose'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gf='git fetch'
-alias gfr='git fetch && git rebase origin/master'
+alias gf='git fetch origin master'
+alias gfr='git fetch origin master && git rebase origin/master'
 alias gl='git log --graph --pretty=oneline'
 alias glo='git log --graph'
 alias glog='git log -p --graph'
@@ -24,7 +24,7 @@ alias gsp='git stash pop'
 alias gst='git status'
 
 function git_new_branch() {
-  git fetch
+  git fetch origin master
   git checkout -b $1 --no-track origin/master
 }
 alias gnb=git_new_branch
