@@ -58,12 +58,16 @@ open_go_coverage () {
 alias cvr=open_go_coverage
 
 k_namespace () {
-  kubectl -n $KNAMESPACE $@
+  if [[ -z "${KNAMESPACE}" ]]; then
+    kubectl $@
+  else
+    kubectl -n $KNAMESPACE $@
+  fi
 }
 alias k=k_namespace
 
 k_set_namespace () {
   export KNAMESPACE=$1
 }
-alias kn=k_set_namespace
+alias kns=k_set_namespace
 
