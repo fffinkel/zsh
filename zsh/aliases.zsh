@@ -26,6 +26,7 @@ alias gst='git status'
 function git_new_branch() {
   git fetch origin master
   git checkout -b $1 --no-track origin/master
+  git push --set-upstream origin $1
 }
 alias gnb=git_new_branch
 
