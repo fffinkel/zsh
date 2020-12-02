@@ -71,3 +71,9 @@ k_set_namespace () {
 }
 alias kns=k_set_namespace
 
+k_reset () {
+  export KNAMESPACE=
+  export KUBECONFIG=
+}
+alias kr=k_reset
+
