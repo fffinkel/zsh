@@ -14,12 +14,16 @@ bindkey -M vicmd v edit-command-line
 
 setopt histignorealldups sharehistory
 
-source ~/.zsh/greeting.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/styles.zsh
 source ~/.zsh/exports.zsh
+source ~/.zsh/greeting.zsh
 source ~/.zsh/ssh.zsh
+
+if [ -f ~/.zsh/work.zsh ]; then
+  source ~/.zsh/work.zsh
+fi
 
 ZIPRC=$HOME/.ziprc
 if [ -f $ZIPRC ]; then
