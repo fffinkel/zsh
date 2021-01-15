@@ -4,6 +4,7 @@ alias ls='ls -G'
 alias s='screen -dRR'
 alias sls='screen -ls'
 alias vi='vim -p'
+alias noat='vi $(go run ~/src/gerber/main.go print_today_filename)'
 
 # git!
 alias ga='git add'
